@@ -63,13 +63,15 @@ const Skills = () => {
                         <div
                             key={index}
                             className="
-                            p-6 border border-indigo-500/30 rounded-xl
+                            relative p-6 border border-indigo-500/30 rounded-xl
                             hover:border-indigo-400
                             hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]
                             transition-all duration-300
                             "
                         >
-                        
+                            <div className="
+                                    absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-purple-600/10 rounded-full blur-[120px]
+                                " />
                             <div className="mb-4">
                                 <div className="flex items-center mb-4 gap-2">
                                     {/* dot */}

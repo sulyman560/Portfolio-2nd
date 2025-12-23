@@ -61,7 +61,7 @@ const Projects = () => {
                         >
                             {/* Background Glow */}
                             <div className="
-                                    absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-purple-600/30 rounded-full blur-[120px]
+                                    absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-purple-600/10 rounded-full blur-[120px]
                                 " />
                             {/* Image Wrapper */}
                             <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
