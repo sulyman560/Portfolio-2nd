@@ -38,7 +38,7 @@ export default function Home() {
   }, [isDarkMode])
 
   return (
-    <div className="bg-gray-950 min-h-screen dark:bg-darkTheme transition-colors duration-500">
+    <div className="bg-gray-950 min-h-screen w-full dark:bg-darkTheme transition-colors duration-500">
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <Hero isDarkMode={isDarkMode} />
       <ServicesSection />

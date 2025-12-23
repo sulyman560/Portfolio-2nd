@@ -6,31 +6,31 @@ import { BsGithub, BsBoxArrowUpRight } from "react-icons/bs";
 
 const projects = [
     {
-        title: "SkillBay - A Job Portal",
+        title: "GreenCart (E-Commerce App)",
         description:
-            "A full-stack MERN job portal where employers post jobs and candidates apply with real-time features.",
-        image: "/work-1.png", // public folder path
+            "Here are the main functions of the GreenCart eCommerce website 👇 Product Listing – Displays products with images, names, and prices.Add to Cart – Allows users to add selected items to their shopping cart.Cart Management – Users can increase, decrease, or remove items from the cart.Checkout System – Lets users confirm their order (may be demo-based).Responsive Design – Works smoothly on both mobile and desktop devices.",
+        image: "/project4.jpeg", // public folder path
         tools: ["React", "Tailwind CSS", "MongoDB", "Node.js", "JWT", "Cloudinary", "Multer"],
-        live: "#",
-        github: "#",
+        live: "https://greencart-ashy.vercel.app",
+        github: "https://github.com/sulyman560/GreenCart",
     },
     {
-        title: "Portfolio Website",
+        title: "PingUp (Social media App)",
         description:
-            "Personal portfolio website built with React and Tailwind CSS to showcase projects and skills.",
-        image: "/work-2.png",
+            "Main Functions / Work of the Site Wine Listing / Catalog – Users can see a collection of wines, often with images, names, and details. Wine Details – Clicking a wine likely shows more info: description, price, origin, or rating. Search / Filter (if available) – Users might filter wines by type, region, or rating. Add to Favorites / Wishlist – Some apps allow saving preferred wines (though might be demo-only). Responsive UI – Works well on mobile and desktop, clean modern interface.",
+        image: "/project5.jpeg",
         tools: ["React", "Express", "Tailwind CSS", "MongoDB", "Node.js", "JWT", "Cloudinary"],
-        live: "#",
-        github: "#",
+        live: "https://ping-up-wine.vercel.app",
+        github: "https://github.com/sulyman560/PingUp",
     },
     {
-        title: "E-Commerce App",
+        title: "Food-Del (E-Commerce App)",
         description:
-            "An e-commerce web app with product listing, cart system, and authentication.",
-        image: "/work-3.png",
+            "It is a food delivery website with the following main functions: Menu Display: Shows a list of available food items. Order Placement: Users can select and order their favorite food. User Interaction: Provides easy navigation for a smooth user experience.",
+        image: "/project6.jpeg",
         tools: ["React", "Express", "Tailwind CSS", "MongoDB", "Node.js", "JWT"],
-        live: "#",
-        github: "#",
+        live: "https://food-del-frontend1-5l6a.onrender.com",
+        github: "https://github.com/sulyman560/food-del",
     },
 ];
 
@@ -47,12 +47,12 @@ const Projects = () => {
                 </h2>
                 <p className="text-md md:text-xl font text-gray-200 text-center mb-12">A showcase of my recent work and personal projects.</p>
                 {/* Projects Grid */}
-                <div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project, index) => (
                         <div
                             key={index}
                             className="
-                            group relative scale-100 hover:scale-105
+                            relative group scale-100 hover:scale-105
                             border border-indigo-500/20 rounded-xl
                             hover:border-indigo-500/30
                             hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]
@@ -60,7 +60,7 @@ const Projects = () => {
                             "
                         >
                             {/* Background Glow */}
-                            <div className="absolute -top-32 left-22 w-[500px] h-[500px]
+                            <div className="absolute top-0 left-22 w-[500px] h-[500px]
                             bg-purple-600/20 rounded-full blur-[140px]" />
                             {/* Image Wrapper */}
                             <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
@@ -80,18 +80,18 @@ const Projects = () => {
                                     <div className=" 
                                         flex gap-4 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                                         <a
-                                            href={project.github} target="_blank" rel="noreferrer"
-                                            className="p-1 text-md rounded-full backdrop-blur-md hover:scale-105 transition border border-white"
-                                        >
-                                            <BsGithub className="w-10 h-10 p-2 text-white" />
+                                            href={project.github} target="_blank" rel="noreferrer">
+                                            <BsGithub className="
+                                            w-10 h-10 p-2 text-white border border-white/30 rounded-full backdrop-blur-md hover:scale-125 transition duration-500" />
                                         </a>
                                         <a
                                             href={project.live}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="p-1 text-md rounded-full bg-indigo-600 hover:scale-105 transition border border-indigo-500"
-                                        >
-                                            <BsBoxArrowUpRight className="w-10 h-10 p-2 text-white" />
+                                            className="border border-white/30 bg-indigo-600 rounded-full hover:scale-125 transition duration-500"
+                                            >
+                                            <BsBoxArrowUpRight className="
+                                            w-10 h-10 p-2 text-white" />
                                         </a>
                                     </div>
 
