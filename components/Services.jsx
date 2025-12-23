@@ -117,7 +117,9 @@ const Services = () => {
                                 transition-all duration-300 text-gray-200"
                                 
                             >
-                                <div className="absolute -top-32 left-32 w-[500px] h-[500px] bg-purple-600/30 rounded-full blur-[140px]" />
+                                <div className="
+                                    absolute -top-20 left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-purple-600/30 rounded-full blur-[120px]
+                                " />
 
                                 <div
                                     className={`text-4xl ${service.color} ${borderColor} mb-5 hover:scale-100 md:hover:scale-110 transition duration-300 border-2 rounded-md p-4 w-16 h-16 flex items-center justify-center`}

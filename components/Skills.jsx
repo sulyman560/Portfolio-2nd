@@ -69,8 +69,7 @@ const Skills = () => {
                             transition-all duration-300
                             "
                         >
-                            <div className="absolute left-22 w-[500px] h-[500px]
-                            bg-purple-600/10 rounded-full blur-[140px]" />
+                        
                             <div className="mb-4">
                                 <div className="flex items-center mb-4 gap-2">
                                     {/* dot */}
