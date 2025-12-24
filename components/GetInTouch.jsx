@@ -27,8 +27,8 @@ const Contact = () => {
                                     type="text"
                                     placeholder="Your Name"
                                     className="w-full mt-2 px-4 py-3 rounded-lg bg-[#141c2f]
-                  border border-[#242437] text-white outline-none
-                  focus:border-indigo-500 focus:shadow-[0_0_8px_rgba(59,130,246,0.6)] transition duration-300"
+                                    border border-[#242437] text-white outline-none
+                                    focus:border-indigo-500 focus:shadow-[0_0_8px_rgba(59,130,246,0.6)] transition duration-300"
                                 />
                             </div>
 
@@ -38,8 +38,8 @@ const Contact = () => {
                                     type="email"
                                     placeholder="name@example.com"
                                     className="w-full mt-2 px-4 py-3 rounded-lg bg-[#141c2f]
-                  border border-[#242437] text-white outline-none
-                  focus:border-indigo-500 focus:shadow-[0_0_8px_rgba(59,130,246,0.6)] transition duration-300"
+                                    border border-[#242437] text-white outline-none
+                                    focus:border-indigo-500 focus:shadow-[0_0_8px_rgba(59,130,246,0.6)] transition duration-300"
                                 />
                             </div>
 
@@ -49,8 +49,8 @@ const Contact = () => {
                                     rows="5"
                                     placeholder="Tell me about your project..."
                                     className="w-full mt-2 px-4 py-3 rounded-lg bg-[#141c2f]
-                  border border-[#242437] text-white outline-none
-                  focus:border-indigo-500 resize-none focus:shadow-[0_0_8px_rgba(59,130,246,0.6)] transition duration-300"
+                                    border border-[#242437] text-white outline-none
+                                    focus:border-indigo-500 resize-none focus:shadow-[0_0_8px_rgba(59,130,246,0.6)] transition duration-300"
                                 />
                             </div>
 
@@ -75,7 +75,7 @@ const Contact = () => {
 
                     {/* Contact Info */}
                     <div className="space-y-8">
-                        <div className="bg-[#0b1120] border border-[#242437] rounded-2xl p-8">
+                        <div className="bg-[#0b1120] border border-[#242437] rounded-2xl p-8 hover:scale-105 transition duration-500">
                             <h3 className="text-2xl font-semibold text-white mb-6">
                                 Contact Information
                             </h3>
@@ -101,7 +101,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className='w-full text-green-400 flex items-center gap-2 mb-10 border-green-500/40 bg-green-500/10 border px-4 backdrop-blur-md py-1.5 rounded-md w-fit mx-auto'>
+                                <div className='w-full text-green-400 flex items-center gap-2 mb-10 border-green-500/40 bg-green-500/10 border px-4 backdrop-blur-md py-2 rounded-md w-fit mx-auto'>
                                     <div className='h-2 w-2 bg-green-500 rounded-full'></div>
                                     <p className=' text-sm'>Available for freelance work</p>
                                 </div>
@@ -109,25 +109,53 @@ const Contact = () => {
                         </div>
 
                         {/* Social Links */}
-                        <div className="bg-[#0b1120] border border-[#242437] rounded-2xl p-8">
+                        <div className="bg-[#0b1120] border border-[#242437] rounded-2xl p-8 hover:scale-105 transition duration-500">
+
                             <h3 className="text-2xl font-semibold text-white mb-6">
                                 Connect With Me
                             </h3>
 
-                            <div className="flex gap-5 text-2xl">
-                                <a href="#" className="text-gray-400 hover:text-white transition">
-                                    <FaGithub />
-                                </a>
-                                <a href="#" className="text-gray-400 hover:text-white transition">
-                                    <FaLinkedin />
-                                </a>
-                                <a href="#" className="text-gray-400 hover:text-white transition">
-                                    <FaTwitter />
-                                </a>
-                                <a href="mailto:itstumpaa@gmail.com" className="text-gray-400 hover:text-white transition">
-                                    <FaEnvelope />
-                                </a>
+                            <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 text-2xl items-center sm:items-start">
+
+                                <div className="flex flex-col gap-6 w-full sm:w-auto">
+                                    <a
+                                        href="#"
+                                        className="flex flex-col items-center text-white md:hover:scale-125 transition duration-500 hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] px-10 sm:px-20 py-5 border border-white/20 rounded-md transition"
+                                    >
+                                        <FaGithub />
+                                        <span className="text-sm">Github</span>
+                                    </a>
+
+                                    <a
+                                        href="#"
+                                        className="flex flex-col items-center text-white md:hover:scale-125 transition duration-500 hover:border-indigo-600 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] px-10 sm:px-20 py-5 border border-indigo-500/20 rounded-md transition"
+                                    >
+                                        <FaLinkedin className="text-blue-700" />
+                                        <span className="text-sm">Linkedin</span>
+                                    </a>
+                                </div>
+
+                                <div className="flex flex-col gap-6 w-full sm:w-auto">
+                                    <a
+                                        href="#"
+                                        className="flex flex-col items-center text-white md:hover:scale-125 transition duration-500 hover:border-indigo-600 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] px-10 sm:px-20 py-5 border border-indigo-500/20 rounded-md transition"
+                                    >
+                                        <FaTwitter className="text-blue-500" />
+                                        <span className="text-sm">Twitter</span>
+                                    </a>
+
+                                    <a
+                                        href="#"
+                                        className="flex flex-col items-center text-white md:hover:scale-125 transition duration-500 hover:border-red-600 hover:shadow-[0_0_20px_rgba(239,68,68,0.6)] px-10 sm:px-20 py-5 border border-red-500/20 rounded-md transition"
+                                    >
+                                        <FaEnvelope className="text-red-500" />
+                                        <span className="text-sm">Email</span>
+                                    </a>
+                                </div>
+
                             </div>
+
+
                         </div>
                     </div>
 

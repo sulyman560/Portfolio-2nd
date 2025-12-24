@@ -31,6 +31,9 @@ export default function CTASection() {
                         {/* light effect
                         White light → rgba(255,255,255,0.5)
 
+                        Red light → rgba(239,68,68,0.6)]
+
+
                         Purple glow → rgba(168,85,247,0.6)
 
                         Blue glow → rgba(59,130,246,0.6)

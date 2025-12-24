@@ -8,7 +8,12 @@ const About = ({ isDarkMode }) => {
     return (
         <section id="about" className="py-20 max-w-4xl mx-auto px-6">
             <h2 className="text-3xl font-bold mb-4">About Me</h2>
-            <p className="text-gray-700">I am a passionate frontend developer who builds clean and responsive web interfaces using React and Tailwind CSS.</p>
+            <p className="text-gray-700">
+            I am a fresher MERN Stack Developer with hands-on experience in building web applications using React, 
+            Node.js, Express, and MongoDB. I have gained practical exposure to both frontend and backend development 
+            through small projects and internships. I am highly motivated to take on new challenges, continuously 
+            improve my skills, and contribute to impactful development projects.
+            </p>
         </section>
     )
 }

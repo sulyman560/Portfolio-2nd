@@ -1,5 +1,4 @@
 "use client"
-import About from "@/components/About";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import GetInTouch from "@/components/GetInTouch";
@@ -45,7 +44,6 @@ export default function Home() {
       <Services />
       <CTASection />
       <Skills isDarkMode={isDarkMode} />
-      <About isDarkMode={isDarkMode} />
       <Projects isDarkMode={isDarkMode} />
       <GetInTouch />
       <Footer isDarkMode={isDarkMode} />
