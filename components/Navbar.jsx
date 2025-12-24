@@ -102,6 +102,10 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               onClick={() => { setActive("about"); setOpen(false) }}
               className={linkClass("about")}
               href="#about">About</a>
+              <a
+              onClick={() => setActive("services")}
+              className={linkClass("services")}
+              href="#services">Services</a>
             <a
               onClick={() => { setActive("skills"); setOpen(false) }}
               className={linkClass("skills")}

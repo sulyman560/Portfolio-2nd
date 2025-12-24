@@ -4,7 +4,7 @@ import { HiLocationMarker, HiMail } from "react-icons/hi";
 
 const Contact = () => {
     return (
-        <section className="relative overflow-hidden py-24">
+        <section id="contact" className="relative overflow-hidden py-24">
             {/* Glow */}
             <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
         w-[700px] h-[700px] bg-indigo-600/20 rounded-full blur-[160px]" />

@@ -86,10 +86,10 @@ const Services = () => {
 
                 {/* Heading */}
                 <div className="text-center mb-16">
-                    <h1 className="lg:text-6xl text-4xl text-white mb-3 font-semibold">
+                    <h1 className="text-5xl text-white mb-4 font-bold">
                         What I <span className="bg-gradient-to-r from-purple-500 to-indigo-400 bg-clip-text text-transparent">Can</span> <span className="text-pink-400">Do</span>
                     </h1>
-                    <h2 className="sm:text-xl lg:text-2xl text-gray-200">
+                    <h2 className="text-xl font text-gray-200 text-center mb-12">
                         Services I offer to help bring your ideas to life
                     </h2>
                 </div>

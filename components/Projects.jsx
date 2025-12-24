@@ -1,7 +1,6 @@
 import Image from "next/image";
-import React from "react";
-import { FaGithub } from "react-icons/fa";
 import { BsGithub, BsBoxArrowUpRight } from "react-icons/bs";
+import ReadMore from "./ReadMore";
 
 
 const projects = [
@@ -40,12 +39,13 @@ const Projects = () => {
             id="projects"
             className="bg-gray-950 text-white py-16 px-4 md:px-10"
         >
+
             <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
-                <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
+                <h2 className="text-5xl font-bold text-white text-center mb-4">
                     Featured <span className="bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">Projects</span>
                 </h2>
-                <p className="text-md md:text-xl font text-gray-200 text-center mb-12">A showcase of my recent work and personal projects.</p>
+                <p className="text-xl font text-gray-200 text-center mb-12">A showcase of my recent work and personal projects.</p>
                 {/* Projects Grid */}
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {projects.map((project, index) => (
@@ -90,7 +90,7 @@ const Projects = () => {
                                             target="_blank"
                                             rel="noreferrer"
                                             className="border border-white/30 bg-indigo-600 rounded-full hover:scale-125 transition duration-500"
-                                            >
+                                        >
                                             <BsBoxArrowUpRight className="
                                             w-10 h-10 p-2 text-white" />
                                         </a>
@@ -105,10 +105,9 @@ const Projects = () => {
                                 <h3 className="text-xl font-semibold">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-400 text-sm mt-2">
-                                    {project.description}
-                                </p>
-
+                                <div className="mt-2">
+                                    <ReadMore text={project.description} limit={40} />
+                                </div>
 
                                 <div className="mt-4">
                                     <h4 className="text-sm font-medium mb-2">Technologies:</h4>

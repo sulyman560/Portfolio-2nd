@@ -1,6 +1,5 @@
 "use client"
 import About from "@/components/About";
-import Contact from "@/components/Contact";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import GetInTouch from "@/components/GetInTouch";
@@ -49,7 +48,6 @@ export default function Home() {
       <About isDarkMode={isDarkMode} />
       <Projects isDarkMode={isDarkMode} />
       <GetInTouch />
-      <Contact />
       <Footer isDarkMode={isDarkMode} />
     </div>
 
