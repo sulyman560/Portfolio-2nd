@@ -58,7 +58,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 font-medium">
+        <div className="hidden md:flex space-x-8">
           <Link href="/" onClick={() => setActiveHash("")} className={linkClass("/")}>
             Home
           </Link>
@@ -91,7 +91,7 @@ const Navbar = () => {
           open ? "max-h-60 opacity-100" : "max-h-0 overflow-hidden"
         }`}
       >
-        <div className="flex flex-col px-6 py-4 space-y-4 backdrop-blur-md font-medium text-white">
+        <div className="flex flex-col px-6 py-4 space-y-4 backdrop-blur-md text-white">
           <Link href="/" onClick={() => { setActiveHash(""); setOpen(false); }} className={linkClass("/")}>
             Home
           </Link>

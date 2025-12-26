@@ -1,5 +1,9 @@
 import Image from "next/image";
 import { IoMdCode } from "react-icons/io";
+import { LuGlobe } from "react-icons/lu";
+import { SlBadge } from "react-icons/sl";
+import { IoBookOutline } from "react-icons/io5";
+
 
 export default function About() {
   return (
@@ -124,11 +128,11 @@ export default function About() {
         space-y-5 text-gray-300 leading-relaxed shadow-lg">
           {/* ===== Core Values ===== */}
           <div className="">
-            <h2 className="text-3xl font-semibold mb-10">
+            <h2 className="text-xl font-semibold mb-4">
               Core Values & Approach
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2">
               {[
                 {
                   icon: "💡",
@@ -153,12 +157,19 @@ export default function About() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="bg-gray-900 border border-gray-800 rounded-xl p-6"
+                  className="rounded-xl mb-2"
                 >
-                  <h3 className="text-xl font-semibold mb-2">
-                    {item.icon} {item.title}
-                  </h3>
-                  <p className="text-gray-400">{item.desc}</p>
+                  <div className="flex gap-4">
+                    <div className="border border-gray-700 p-2 w-12 h-12 rounded-md text-xl font-semibold mb-2">
+                      {item.icon}
+                    </div>
+                    <div className="flex flex-col">
+                      <p>{item.title}</p>
+                      <p className="text-gray-400">{item.desc}</p>
+
+                    </div>
+                  </div>
+
                 </div>
               ))}
             </div>
@@ -172,18 +183,19 @@ export default function About() {
 
 
       {/* ===== Stats ===== */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-20">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-20 mb-10">
         {[
-          { value: "12+", label: "Projects Completed" },
-          { value: "3", label: "Languages" },
-          { value: "15+", label: "Technologies" },
-          { value: "500+", label: "Learning Hours" },
+          { icon: <IoMdCode className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "12+", label: "Projects Completed" },
+          { icon: <LuGlobe className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "3", label: "Languages" },
+          { icon: <SlBadge className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "15+", label: "Technologies" },
+          { icon: <IoBookOutline className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "500+", label: "Learning Hours" },
         ].map((item) => (
           <div
             key={item.label}
-            className="bg-gray-900 border border-gray-800 rounded-xl p-6"
+            className="flex flex-col gap-2 items-center bg-gray-900 hover:scale-105 border border-gray-800 rounded-xl p-6 backdrop-blur-md bg-indigo-600/10 hover:bg-indigo-400/10 shadow-lg transition-all duration-500"
           >
-            <h3 className="text-3xl font-bold text-white mb-2">
+            {item.icon}
+            <h3 className="text-3xl font-bold text-white">
               {item.value}
             </h3>
             <p className="text-gray-400">{item.label}</p>

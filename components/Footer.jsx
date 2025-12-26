@@ -6,7 +6,7 @@ import { HiLocationMarker, HiMail } from 'react-icons/hi'
 
 const Footer = ({ isDarkMode }) => {
   return (
-    <footer className="bg- px-6 pt-8 md:px-16 w-full text-gray-300">
+    <footer className="bg- px-6 pt-8 md:px-16 w-full text-gray-300 border-t border-gray-500/30">
 
       <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500 pb-10">
 
@@ -60,17 +60,16 @@ const Footer = ({ isDarkMode }) => {
 
             <ul className="text-sm space-y-2">
 
-              <li><a href="#hero">Home</a></li>
+              <li><a href="#hero" className='hover:text-indigo-400/90 transition duration-300'>Home</a></li>
 
-              <li><a href="#about">About us</a></li>
+              <li><a href="#about" className='hover:text-indigo-400/90 transition duration-300'>About us</a></li>
 
-              <li><a href="#services">Services</a></li>
+              <li><a href="#services" className='hover:text-indigo-400/90 transition duration-300'>Services</a></li>
+              <li><a href="#projects" className='hover:text-indigo-400/90 transition duration-300'>Projects</a></li>
 
-              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact" className='hover:text-indigo-400/90 transition duration-300'>Contact us</a></li>
 
-              <li><a href="#contact">Contact us</a></li>
-
-              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#" className='hover:text-indigo-400/90 transition duration-300'>Privacy policy</a></li>
 
             </ul>
 

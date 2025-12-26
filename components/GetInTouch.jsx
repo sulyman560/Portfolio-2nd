@@ -1,8 +1,33 @@
+'use client';
+import { useState } from "react";
 import { BsMailbox, BsSend } from "react-icons/bs";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaPaperPlane, FaLocationArrow } from "react-icons/fa";
 import { HiLocationMarker, HiMail } from "react-icons/hi";
 
 const Contact = () => {
+
+    const [result, setResult] = useState("");
+
+    const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+    formData.append("access_key", "30e95b66-1e78-46bc-8a24-d1efd1ca81da");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      setResult("Form Submitted Successfully.");
+      event.target.reset();
+    } else {
+      setResult("Error");
+    }
+  };
+
     return (
         <section id="contact" className="relative overflow-hidden py-24">
             {/* Glow */}
@@ -20,11 +45,11 @@ const Contact = () => {
 
                     {/* Contact Form */}
                     <div className="bg-[#0b1120] border border-[#242437] rounded-2xl p-8">
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={onSubmit}>
                             <div>
                                 <label className="text-sm text-gray-200">Your Name</label>
                                 <input
-                                    type="text"
+                                    type="text" name='name'
                                     placeholder="Your Name"
                                     className="w-full mt-2 px-4 py-3 rounded-lg bg-[#141c2f]
                                     border border-[#242437] text-white outline-none
@@ -35,7 +60,7 @@ const Contact = () => {
                             <div>
                                 <label className="text-sm text-gray-200">Your Email</label>
                                 <input
-                                    type="email"
+                                    type="email" name='email'
                                     placeholder="name@example.com"
                                     className="w-full mt-2 px-4 py-3 rounded-lg bg-[#141c2f]
                                     border border-[#242437] text-white outline-none
@@ -46,7 +71,7 @@ const Contact = () => {
                             <div>
                                 <label className="text-sm text-gray-200">Your Message</label>
                                 <textarea
-                                    rows="5"
+                                    rows="5" name='message'
                                     placeholder="Tell me about your project..."
                                     className="w-full mt-2 px-4 py-3 rounded-lg bg-[#141c2f]
                                     border border-[#242437] text-white outline-none
@@ -55,6 +80,7 @@ const Contact = () => {
                             </div>
 
                             <button
+                                type='submit'
                                 className="
                                     w-full bg-gradient-to-r from-indigo-600 to-purple-600
                                     hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600
@@ -70,6 +96,7 @@ const Contact = () => {
                                 ">
                                 Send Message <FaPaperPlane className="ml-2" />
                             </button>
+                            <p className='mt-4 text-white'>{result}</p>
                         </form>
                     </div>
 
@@ -119,7 +146,7 @@ const Contact = () => {
 
                                 <div className="flex flex-col gap-6 w-full sm:w-auto">
                                     <a
-                                        href="#"
+                                        href="https://github.com/sulyman560"  
                                         className="flex flex-col items-center text-white md:hover:scale-125 transition duration-500 hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] px-10 sm:px-20 py-5 border border-white/20 rounded-md transition"
                                     >
                                         <FaGithub />
@@ -127,7 +154,7 @@ const Contact = () => {
                                     </a>
 
                                     <a
-                                        href="#"
+                                        href="https://www.linkedin.com/in/sulyman-ahammed-ab581017a"
                                         className="flex flex-col items-center text-white md:hover:scale-125 transition duration-500 hover:border-indigo-600 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] px-10 sm:px-20 py-5 border border-indigo-500/20 rounded-md transition"
                                     >
                                         <FaLinkedin className="text-blue-700" />
@@ -137,7 +164,7 @@ const Contact = () => {
 
                                 <div className="flex flex-col gap-6 w-full sm:w-auto">
                                     <a
-                                        href="#"
+                                        href="https://www.twitter.com/sulyman_ahammed"
                                         className="flex flex-col items-center text-white md:hover:scale-125 transition duration-500 hover:border-indigo-600 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] px-10 sm:px-20 py-5 border border-indigo-500/20 rounded-md transition"
                                     >
                                         <FaTwitter className="text-blue-500" />
@@ -145,7 +172,7 @@ const Contact = () => {
                                     </a>
 
                                     <a
-                                        href="#"
+                                        href="mailto:sulyman560@gmail.com"
                                         className="flex flex-col items-center text-white md:hover:scale-125 transition duration-500 hover:border-red-600 hover:shadow-[0_0_20px_rgba(239,68,68,0.6)] px-10 sm:px-20 py-5 border border-red-500/20 rounded-md transition"
                                     >
                                         <FaEnvelope className="text-red-500" />
