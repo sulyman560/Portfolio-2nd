@@ -1,6 +1,8 @@
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "./ThemeProvider";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -26,12 +28,17 @@ export default function RootLayout({ children }) {
       <head>
       </head>
       <body suppressHydrationWarning={true}
-        className={`${outfit.variable} ${ovo.variable} antialiased leading-8 overflow-x-hidden dark:bg-darkTheme dark:text-white`}
-      >
+        className={`${outfit.variable} ${ovo.variable} antialiased leading-8 overflow-x-hidden dark:bg-darkTheme dark:text-white
+        bg-gray-950 min-h-screen w-full dark:bg-darkTheme transition-colors duration-500
+        `}>
         <ThemeProvider>
-          {children}
+          <Navbar />
+          <main className="">
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
-        
+
       </body>
     </html>
   );

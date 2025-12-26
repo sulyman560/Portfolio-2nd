@@ -12,7 +12,7 @@ export default function CTASection() {
                     Let’s work together and build something amazing!
                 </p>
                 <div className="flex justify-center">
-                    <button
+                    <a href="#contact"
                         className="
                         bg-gradient-to-r from-indigo-600 to-purple-600
                         hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600
@@ -39,7 +39,7 @@ export default function CTASection() {
                         Blue glow → rgba(59,130,246,0.6)
                         */}
                         <span className="relative z-10">Let’s Work Together</span><FaArrowRight className="ml-2 relative z-10" />
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>

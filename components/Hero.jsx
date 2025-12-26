@@ -7,7 +7,7 @@ const Hero = () => {
     return (
         <section
             id="hero"
-            className="relative min-h-screen flex items-center justify-center overflow-hidden text-white flex items-center justify-center"
+            className="relative min-h-screen flex items-center justify-center text-white flex items-center justify-center"
         >
             <div className="absolute -top-32 left-32 w-[500px] h-[500px]
             bg-purple-600/30 rounded-full blur-[140px]" />

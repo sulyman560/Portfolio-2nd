@@ -6,7 +6,7 @@ import { HiLocationMarker, HiMail } from 'react-icons/hi'
 
 const Footer = ({ isDarkMode }) => {
   return (
-    <footer className="px-6 pt-8 md:px-16 lg:px-36 w-full text-gray-300">
+    <footer className="bg- px-6 pt-8 md:px-16 w-full text-gray-300">
 
       <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500 pb-10">
 
@@ -44,10 +44,10 @@ const Footer = ({ isDarkMode }) => {
 
           <div className="flex items-center gap-2 mt-4 text-md">
 
-            <BsGithub className="cursor-pointer p-2 border border-gray-500/30 rounded-md w-10 h-10 hover:bg-gray-500/10 hover:scale-110 transition duration-300" />
-            <FaLinkedin className="cursor-pointer p-2 border border-gray-500/30 rounded-md w-10 h-10 hover:bg-gray-500/10 hover:scale-110 transition duration-300" />
-            <HiMail className="cursor-pointer p-2 border border-gray-500/30 rounded-md w-10 h-10 hover:bg-gray-500/10 hover:scale-110 transition duration-300" />
-            <FaWhatsapp className="cursor-pointer p-2 border border-gray-500/30 rounded-md w-10 h-10 hover:bg-gray-500/10 hover:scale-110 transition duration-300" />
+            <a href="https://github.com/sulyman560"><BsGithub className="cursor-pointer p-2 border border-gray-500/30 rounded-md w-10 h-10 hover:bg-gray-500/10 hover:scale-110 transition duration-300" /></a>
+            <a href="https://www.linkedin.com/in/sulyman-ahammed-ab581017a"><FaLinkedin className="cursor-pointer p-2 border border-gray-500/30 rounded-md w-10 h-10 hover:bg-gray-500/10 hover:scale-110 transition duration-300" /></a>
+            <a href="mailto:sulyman560@gmail.com"><HiMail className="cursor-pointer p-2 border border-gray-500/30 rounded-md w-10 h-10 hover:bg-gray-500/10 hover:scale-110 transition duration-300" /></a>
+            <a href="https://wa.me/+8801967106291"><FaWhatsapp className="cursor-pointer p-2 border border-gray-500/30 rounded-md w-10 h-10 hover:bg-gray-500/10 hover:scale-110 transition duration-300" /></a>
           </div>
 
         </div>

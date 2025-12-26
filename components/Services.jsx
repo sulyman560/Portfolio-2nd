@@ -1,6 +1,4 @@
-import { color } from "motion";
-import { Shrikhand } from "next/font/google";
-import { useState } from "react";
+
 import { FaCode, FaPalette, FaMobileAlt, FaBullhorn, FaTiktok, FaFileExcel, FaCheck, FaServer, FaShoppingCart, FaRocket } from "react-icons/fa";
 
 const Services = () => {
@@ -81,7 +79,7 @@ const Services = () => {
         },
     ];
     return (
-        <section className="py-24" id="services">
+        <section className="w-full py-16 px-6" id="services">
             <div className="max-w-2xl md:max-w-6xl mx-auto px-4">
 
                 {/* Heading */}
@@ -112,9 +110,10 @@ const Services = () => {
                         return (
                             <div
                                 key={index}
-                                className="relative group bg-[#141c2f] p-8 md:p-6 rounded-2xl border border-[#242437]
+                                className={`relative group bg-[#141c2f] p-8 md:p-6 rounded-2xl border ${borderColor}
+                                hover:${borderColor}
                                 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] hover:scale-100 md:hover:scale-105
-                                transition-all duration-300 text-gray-200"
+                                transition-all duration-300 text-gray-200`}
                                 
                             >
                                 <div className="
