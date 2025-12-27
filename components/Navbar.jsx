@@ -1,119 +1,41 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
+import { HiMenu, HiX } from "react-icons/hi";
 
-const Navbar = () => {
-  const pathname = usePathname();
+export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [activeHash, setActiveHash] = useState("");
-
-  // Navbar scroll effect
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Set initial hash on reload
-  useEffect(() => {
-    setActiveHash(window.location.hash);
-  }, []);
-
-  // Active link class logic
-  const linkClass = (path) => {
-  const isHash = path.startsWith("#");
-  const isHome = path === "/";
-
-  const isActive =
-    (isHome && pathname === "/" && !activeHash) ||
-    (isHash && activeHash === path) ||
-    (!isHash && !isHome && pathname === path);
-
-  return `cursor-pointer transition px-2 py-1 rounded-md ${
-    isActive
-      ? "bg-gradient-to-r from-purple-700 to-indigo-600 text-white"
-      : "text-gray-400 hover:text-white hover:bg-white/10"
-  }`;
-};
-
 
   return (
-    <nav
-      className={`w-full fixed z-50 shadow-sm transition-all duration-300 ${
-        scrolled ? "backdrop-blur-md shadow" : "bg-black/40"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4 text-white">
-        {/* Logo */}
-        <Link
-          href="/"
-          onClick={() => setActiveHash("")}
-          className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent"
+    <>
+      <nav className="fixed top-0 left-0 w-full h-[64px] bg-black z-50 flex items-center justify-between px-4">
+        <h1 className="text-white font-bold">LOGO</h1>
+
+        <button
+          className="md:hidden text-white text-3xl"
+          onClick={() => setOpen(!open)}
         >
-          CoderSulyman
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          <Link href="/" onClick={() => setActiveHash("")} className={linkClass("/")}>
-            Home
-          </Link>
-          <Link href="/about" onClick={() => setActiveHash("")} className={linkClass("/about")}>
-            About
-          </Link>
-          <Link href="/#services" onClick={() => setActiveHash("#services")} className={linkClass("#services")}>
-            Services
-          </Link>
-          <Link href="/#skills" onClick={() => setActiveHash("#skills")} className={linkClass("#skills")}>
-            Skills
-          </Link>
-          <Link href="/#projects" onClick={() => setActiveHash("#projects")} className={linkClass("#projects")}>
-            Projects
-          </Link>
-          <Link href="/#contact" onClick={() => setActiveHash("#contact")} className={linkClass("#contact")}>
-            Contact
-          </Link>
-        </div>
-
-        {/* Mobile Icon */}
-        <button onClick={() => setOpen(!open)} className="md:hidden text-3xl">
-          {open ? <HiX /> : <HiOutlineMenuAlt3 />}
+          {open ? <HiX /> : <HiMenu />}
         </button>
-      </div>
+
+        <div className="hidden md:flex gap-6 text-white">
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+        </div>
+      </nav>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-16 left-0 w-full bg-black/30 transition-all duration-300 ${
-          open ? "max-h-60 opacity-100" : "max-h-0 overflow-hidden"
-        }`}
+        className={`fixed top-[64px] left-0 w-full bg-black text-white z-40
+        transition-all duration-300
+        ${open ? "h-[calc(100vh-64px)]" : "h-0 overflow-hidden"}`}
       >
-        <div className="flex flex-col px-6 py-4 space-y-4 backdrop-blur-md text-white">
-          <Link href="/" onClick={() => { setActiveHash(""); setOpen(false); }} className={linkClass("/")}>
-            Home
-          </Link>
-          <Link href="/about" onClick={() => { setActiveHash(""); setOpen(false); }} className={linkClass("/about")}>
-            About
-          </Link>
-          <Link href="/#services" onClick={() => { setActiveHash("#services"); setOpen(false); }} className={linkClass("#services")}>
-            Services
-          </Link>
-          <Link href="/#skills" onClick={() => { setActiveHash("#skills"); setOpen(false); }} className={linkClass("#skills")}>
-            Skills
-          </Link>
-          <Link href="/#projects" onClick={() => { setActiveHash("#projects"); setOpen(false); }} className={linkClass("#projects")}>
-            Projects
-          </Link>
-          <Link href="/#contact" onClick={() => { setActiveHash("#contact"); setOpen(false); }} className={linkClass("#contact")}>
-            Contact
-          </Link>
+        <div className="flex flex-col gap-6 p-6">
+          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+          <Link href="/about" onClick={() => setOpen(false)}>About</Link>
         </div>
       </div>
-    </nav>
+    </>
   );
-};
-
-export default Navbar;
+}
