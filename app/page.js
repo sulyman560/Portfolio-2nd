@@ -9,9 +9,15 @@ import Skills from "@/components/Skills";
 export default function Home() {
 
   return (
-    <div className="bg-red-500 md:bg-green-500 h-screen">
-      TEST
-    </div>
+    <>
+      <Hero />
+      <ServicesSection />
+      <Services />
+      <CTASection />
+      <Skills />
+      <Projects />
+      <GetInTouch />
+    </>
 
   );
 }
