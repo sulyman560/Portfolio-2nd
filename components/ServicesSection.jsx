@@ -25,7 +25,7 @@ const ServicesSection = () => {
         <section className="w-full py-16 px-6">
             <div 
             className="container mx-auto px-6 bg-[#0d1320] backdrop-blur-md py-10 rounded-2xl border border-blue-500/20
-            hover:shadow-[0_0_15px_rgba(59,130,246,0.6)] transition-all duration-300  hover:bg-[#151627] 
+            hover:border-blue-500/70 hover:shadow-[0_0_15px_rgba(59,130,246,0.6)] transition-all duration-300  hover:bg-[#151627] 
             "
             >
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

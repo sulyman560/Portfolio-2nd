@@ -20,7 +20,7 @@ const Footer = ({ isDarkMode }) => {
             />
             <div className='flex flex-col'>
               <a
-                href="#hero" className="">
+                href="/" className="">
                 <h1 className="
                   bg-[length:200%_100%] animate-textShine
                   text-2xl font-bold relative  overflow-hidden  inline-block
