@@ -9,6 +9,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hash, setHash] = useState("");
 
   // bg change on scroll
   useEffect(() => {
@@ -23,11 +24,26 @@ export default function Navbar() {
     return () => (document.body.style.overflow = "");
   }, [open]);
 
-  const isActive = (href) => pathname === href;
+  const isActive = (href) => {
+  if (href === "/" && pathname === "/" && hash === "") return true;
+  if (href.startsWith("/#") && hash === href.replace("/", "")) return true;
+  if (!href.includes("#") && pathname === href) return true;
+  return false;
+};
+useEffect(() => {
+  const onHashChange = () => {
+    setHash(window.location.hash);
+  };
+
+  onHashChange();
+  window.addEventListener("hashchange", onHashChange);
+  return () => window.removeEventListener("hashchange", onHashChange);
+}, []);
+
 
   const linkClass = (href) =>
     `px-4 py-2 rounded-md transition ${isActive(href)
-      ? "bg-indigo-600 text-white"
+      ? "bg-gradient-to-r from-purple-600 to-indigo-500/90 text-white"
       : "text-gray-300 hover:bg-white/10 hover:text-white"
     }`;
 
@@ -42,13 +58,16 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition ${scrolled ? "bg-black/80 backdrop-blur-md" : "bg-black/50"
+      className={`fixed top-0 w-full z-50 transition ${scrolled ? "backdrop-blur-md" : "bg-black/10"
         }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link
           href="/"
-          className="text-xl font-bold text-white"
+          className="
+          bg-[length:200%_100%] animate-textShine
+          text-2xl font-bold relative  overflow-hidden  inline-block
+          bg-gradient-to-r from-purple-600 to-indigo-500/90 bg-clip-text text-transparent"
           onClick={() => setOpen(false)}
         >
           CoderSulyman
@@ -74,8 +93,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute left-0 right-0 top-full bg-black/95 z-40 transition-all duration-300 ${open
-            ? "opacity-100 visible"
+        className={`md:hidden absolute w-full left-0 right-0 top-full bg-black/90 z-40 transition-all duration-300 ${open
+            ? "opacity-100 visible backdrop-blur-md"
             : "opacity-0 invisible"
           }`}
       >
@@ -84,7 +103,7 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-gray-300 text-lg hover:text-white"
+               className={linkClass(l.href)}
               onClick={() => setOpen(false)}
             >
               {l.label}
