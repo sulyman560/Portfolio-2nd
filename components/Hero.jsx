@@ -6,9 +6,10 @@ import { SiNextdotjs, SiExpress, SiTypescript, SiTailwindcss, SiMongodb } from "
 const Hero = () => {
     return (
         <section
-            id="hero"
-            className="relative min-h-screen flex items-center justify-center text-white flex items-center justify-center"
-        >
+  id="hero"
+  className="relative min-h-screen pt-24 overflow-hidden flex items-center justify-center text-white"
+>
+
             <div className="absolute -top-32 left-32 w-[500px] h-[500px]
             bg-purple-600/30 rounded-full blur-[140px]" />
 

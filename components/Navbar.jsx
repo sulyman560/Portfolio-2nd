@@ -9,100 +9,88 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [hash, setHash] = useState("");
 
-  // scroll effect
+  // bg change on scroll
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // hash detect (App Router safe)
+  // lock body scroll when menu open
   useEffect(() => {
-    const updateHash = () => setHash(window.location.hash);
-    updateHash();
-    window.addEventListener("hashchange", updateHash);
-    return () => window.removeEventListener("hashchange", updateHash);
-  }, []);
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => (document.body.style.overflow = "");
+  }, [open]);
 
-  const isActive = (href) => {
-    if (href === "/" && pathname === "/" && !hash) return true;
-    if (href.startsWith("#") && hash === href) return true;
-    if (!href.startsWith("#") && pathname === href) return true;
-    return false;
-  };
+  const isActive = (href) => pathname === href;
 
   const linkClass = (href) =>
-    `px-3 py-1 rounded-md transition ${
+    `px-4 py-2 rounded-md transition ${
       isActive(href)
-        ? "bg-gradient-to-r from-purple-700 to-indigo-600 text-white"
-        : "text-gray-400 hover:text-white hover:bg-white/10"
+        ? "bg-indigo-600 text-white"
+        : "text-gray-300 hover:bg-white/10 hover:text-white"
     }`;
+
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/skills", label: "Skills" },
+    { href: "/projects", label: "Projects" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all ${
-        scrolled ? "bg-black/80 backdrop-blur-md" : "bg-black/40"
+      className={`fixed top-0 w-full z-50 transition ${
+        scrolled ? "bg-black/80 backdrop-blur-md" : "bg-black/50"
       }`}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
+      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link
           href="/"
-          onClick={() => {
-            setHash("");
-            setOpen(false);
-          }}
-          className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent"
+          className="text-xl font-bold text-white"
+          onClick={() => setOpen(false)}
         >
           CoderSulyman
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex space-x-6">
-          <Link href="/" className={linkClass("/")}>Home</Link>
-          <Link href="/about" className={linkClass("/about")}>About</Link>
-          <Link href="/#services" className={linkClass("#services")}>Services</Link>
-          <Link href="/#skills" className={linkClass("#skills")}>Skills</Link>
-          <Link href="/#projects" className={linkClass("#projects")}>Projects</Link>
-          <Link href="/#contact" className={linkClass("#contact")}>Contact</Link>
+        <div className="hidden md:flex gap-6">
+          {links.map((l) => (
+            <Link key={l.href} href={l.href} className={linkClass(l.href)}>
+              {l.label}
+            </Link>
+          ))}
         </div>
 
-        {/* Mobile button */}
+        {/* Mobile toggle */}
         <button
           className="md:hidden text-3xl text-white"
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen((p) => !p)}
         >
           {open ? <HiX /> : <HiOutlineMenuAlt3 />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        } bg-black/90 backdrop-blur-md`}
+        className={`md:hidden fixed top-full left-0 w-full bg-black/95 transition-all duration-300 ${
+          open
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
       >
-        <div className="flex flex-col px-6 py-4 space-y-4">
-          {[
-            ["/", "Home"],
-            ["/about", "About"],
-            ["#services", "Services"],
-            ["#skills", "Skills"],
-            ["#projects", "Projects"],
-            ["#contact", "Contact"],
-          ].map(([href, label]) => (
+        <div className="flex flex-col px-6 py-6 space-y-4">
+          {links.map((l) => (
             <Link
-              key={href}
-              href={href.startsWith("#") ? `/${href}` : href}
-              className={linkClass(href)}
-              onClick={() => {
-                setHash(href.startsWith("#") ? href : "");
-                setOpen(false);
-              }}
+              key={l.href}
+              href={l.href}
+              className="text-gray-300 text-lg hover:text-white"
+              onClick={() => setOpen(false)}
             >
-              {label}
+              {l.label}
             </Link>
           ))}
         </div>
