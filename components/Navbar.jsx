@@ -26,10 +26,9 @@ export default function Navbar() {
   const isActive = (href) => pathname === href;
 
   const linkClass = (href) =>
-    `px-4 py-2 rounded-md transition ${
-      isActive(href)
-        ? "bg-indigo-600 text-white"
-        : "text-gray-300 hover:bg-white/10 hover:text-white"
+    `px-4 py-2 rounded-md transition ${isActive(href)
+      ? "bg-indigo-600 text-white"
+      : "text-gray-300 hover:bg-white/10 hover:text-white"
     }`;
 
   const links = [
@@ -43,9 +42,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition ${
-        scrolled ? "bg-black/80 backdrop-blur-md" : "bg-black/50"
-      }`}
+      className={`fixed top-0 w-full z-50 transition ${scrolled ? "bg-black/80 backdrop-blur-md" : "bg-black/50"
+        }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link
@@ -76,11 +74,10 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-full left-0 w-full bg-black/95 transition-all duration-300 ${
-          open
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
+        className={`md:hidden absolute left-0 right-0 top-full bg-black/95 z-40 transition-all duration-300 ${open
+            ? "opacity-100 visible"
+            : "opacity-0 invisible"
+          }`}
       >
         <div className="flex flex-col px-6 py-6 space-y-4">
           {links.map((l) => (
@@ -95,6 +92,7 @@ export default function Navbar() {
           ))}
         </div>
       </div>
+
     </nav>
   );
 }

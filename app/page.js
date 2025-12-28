@@ -10,7 +10,13 @@ export default function Home() {
 
   return (
     <>
-      
+     
+      <ServicesSection />
+      <Services />
+      <CTASection />
+      <Skills />
+      <Projects />
+      <GetInTouch />
     </>
 
   );
