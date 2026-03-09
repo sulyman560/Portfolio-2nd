@@ -187,9 +187,9 @@ export default function About() {
       {/* ===== Stats ===== */}
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-20 mb-10">
         {[
-          { icon: <IoMdCode className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "12+", label: "Projects Completed" },
-          { icon: <LuGlobe className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "3", label: "Languages" },
-          { icon: <SlBadge className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "15+", label: "Technologies" },
+          { icon: <IoMdCode className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "5+", label: "Projects Completed" },
+          { icon: <LuGlobe className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "2", label: "Languages" },
+          { icon: <SlBadge className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "8+", label: "Technologies" },
           { icon: <IoBookOutline className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "500+", label: "Learning Hours" },
         ].map((item) => (
           <div
