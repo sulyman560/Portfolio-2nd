@@ -54,10 +54,9 @@ export default function About() {
           </p>
 
           <p>
-            My recent projects include <b className="text-purple-400">skillBay</b> (a freelance marketplace),
-            <b className="text-purple-500"> goParcel</b> (a delivery tracking platform with Stripe
-            integration), and <b className="text-indigo-500">Winter Dog Care</b> (a Next.js pet care booking
-            system). Each project has taught me valuable lessons about
+            My recent projects include <b className="text-purple-400">GreenCart</b> (E-commerce website with Stripe
+            integration), <b className="text-purple-500"> PingUp</b> (a social media app), and <b className="text-indigo-500">Food - Del</b> (E-commerce app with Admin dashboard). 
+            Each project has taught me valuable lessons about
             scalability, user experience, and the importance of writing
             performant, maintainable code.
           </p>
@@ -65,7 +64,7 @@ export default function About() {
           <p>
             When I'm not coding, I'm exploring new technologies, contributing to
             open-source projects, or enhancing my skills through continuous
-            learning. I'm fluent in Bengali, English, and Hindi, which helps me
+            learning. I'm fluent in Bengali, English, which helps me
             collaborate with diverse teams and clients globally.
           </p>
         </div>
