@@ -35,11 +35,14 @@ export default function About() {
           <p>
             Hey there! I'm{" "}
             <span className="font-semibold text-indigo-500">Sulyman Ahammed</span>, a
-            passionate MERN Stack Developer based in <span className="text-purple-500">Nasirabad, Chattogram,
-              Bangladesh</span>. My journey into web development combines technical
-            expertise with a unique background in Marketing from Southern
-            University, giving me a holistic perspective on building products
-            that users love.
+            passionate MERN Stack Developer based in <span className="text-purple-500">Jashore, Khulna,
+              Bangladesh</span>.🚀 My MERN Stack Journey, I am currently learning and building projects using the MERN Stack.
+              My stack includes:
+                • React for building modern user interfaces
+                • Node.js and Express.js for backend development
+                • MongoDB for database management
+              I enjoy building full-stack web applications, REST APIs, and responsive user interfaces.My goal is to become a professional full-stack developer and build real-world 
+              web applications.Currently, I am working on improving my skills by creating projects and learning modern web technologies every day.
           </p>
 
           <p>
