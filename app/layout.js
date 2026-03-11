@@ -3,6 +3,7 @@ import "./globals.css";
 import ThemeProvider from "./ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollTopButton from "@/components/ScrollbarButton";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         `}>
         <ThemeProvider>
           <Navbar />
+          <ScrollTopButton />
           <main className="">
             {children}
           </main>
