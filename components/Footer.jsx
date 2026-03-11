@@ -64,10 +64,10 @@ const Footer = ({ isDarkMode }) => {
 
               <li><a href="/about" className='hover:text-indigo-400/90 transition duration-300'>About us</a></li>
 
-              <li><a href="#services" className='hover:text-indigo-400/90 transition duration-300'>Services</a></li>
-              <li><a href="#projects" className='hover:text-indigo-400/90 transition duration-300'>Projects</a></li>
+              <li><a href="/#services" className='hover:text-indigo-400/90 transition duration-300'>Services</a></li>
+              <li><a href="/#projects" className='hover:text-indigo-400/90 transition duration-300'>Projects</a></li>
 
-              <li><a href="#contact" className='hover:text-indigo-400/90 transition duration-300'>Contact us</a></li>
+              <li><a href="/#contact" className='hover:text-indigo-400/90 transition duration-300'>Contact us</a></li>
 
               <li><a href="#" className='hover:text-indigo-400/90 transition duration-300'>Privacy policy</a></li>
 
