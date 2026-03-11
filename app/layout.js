@@ -4,7 +4,6 @@ import "./globals.css";
 import ThemeProvider from "./ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ScrollTopButton from "@/components/ScrollTopButton";
 
 const outfit = Outfit({
   subsets: ["latin"],
