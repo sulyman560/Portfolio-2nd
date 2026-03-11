@@ -33,11 +33,12 @@ export default function RootLayout({ children }) {
         bg-gray-950 min-h-screen w-full dark:bg-darkTheme transition-colors duration-500
         `}>
         <ThemeProvider>
-          <ScrollTopButton />
+          
           <Navbar />
           
           <main className="">
             {children}
+            <ScrollTopButton />
           </main>
           <Footer />
         </ThemeProvider>
