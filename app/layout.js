@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react'
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "./ThemeProvider";
@@ -23,6 +24,30 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const [show, setShow] = useState(false);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 500) {
+          setShow(true);
+        } else {
+          setShow(false);
+        }
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+  
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+  
+    const scrollTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
 
   return (
     <html lang="en" className="scroll-smooth dark">
@@ -38,7 +63,14 @@ export default function RootLayout({ children }) {
           
           <main className="">
             {children}
-            <ScrollTopButton />
+            {show && (
+        <button
+          onClick={scrollTop}
+          className="cursor-pointer fixed text-2xl bottom-15 right-8 bg-primary text-white px-4 py-2 rounded-full shadow-lg hover:bg-primary/90 transition-all"
+        >
+          ↑
+        </button>
+      )}
           </main>
           <Footer />
         </ThemeProvider>
