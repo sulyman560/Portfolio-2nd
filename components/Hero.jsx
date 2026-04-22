@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs } from "react-icons/fa";
 import { SiNextdotjs, SiExpress, SiTypescript, SiTailwindcss, SiMongodb } from "react-icons/si";
@@ -72,7 +73,7 @@ const Hero = () => {
 
                         {/* Download CV */}
                         <a
-                            href="/cv.pdf"
+                            href="/UpdateCv.pdf"
                             download
                             className="
       px-6 py-3
@@ -107,8 +108,8 @@ const Hero = () => {
                 <div className="flex items-center justify-center gap-4 mt-8">
                     {/* View My Work */}
 
-                    <a
-                        href="#projects"
+                    <Link
+                        href="/#projects"
                         className="
       px-6 py-3
       rounded-lg
@@ -120,7 +121,7 @@ const Hero = () => {
     "
                     >
                         View My Work
-                    </a>
+                    </Link>
 
                     {/* Download CV */}
                     <a
