@@ -49,7 +49,7 @@ useEffect(() => {
 
   const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "About Me" },
   { href: "/#services", label: "Services" },
   { href: "/#skills", label: "Skills" },
   { href: "/#projects", label: "Projects" },

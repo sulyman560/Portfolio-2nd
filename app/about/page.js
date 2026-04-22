@@ -35,11 +35,14 @@ export default function About() {
           <p>
             Hey there! I'm{" "}
             <span className="font-semibold text-indigo-500">Sulyman Ahammed</span>, a
-            passionate MERN Stack Developer based in <span className="text-purple-500">Nasirabad, Chattogram,
-              Bangladesh</span>. My journey into web development combines technical
-            expertise with a unique background in Marketing from Southern
-            University, giving me a holistic perspective on building products
-            that users love.
+            passionate MERN Stack Developer based in <span className="text-purple-500">Jashore, Khulna,
+              Bangladesh</span>.🚀 My MERN Stack Journey, I am currently learning and building projects using the MERN Stack.
+              My stack includes:
+                • React for building modern user interfaces
+                • Node.js and Express.js for backend development
+                • MongoDB for database management
+              I enjoy building full-stack web applications, REST APIs, and responsive user interfaces.My goal is to become a professional full-stack developer and build real-world 
+              web applications.Currently, I am working on improving my skills by creating projects and learning modern web technologies every day.
           </p>
 
           <p>
@@ -51,10 +54,9 @@ export default function About() {
           </p>
 
           <p>
-            My recent projects include <b className="text-purple-400">skillBay</b> (a freelance marketplace),
-            <b className="text-purple-500"> goParcel</b> (a delivery tracking platform with Stripe
-            integration), and <b className="text-indigo-500">Winter Dog Care</b> (a Next.js pet care booking
-            system). Each project has taught me valuable lessons about
+            My recent projects include <b className="text-purple-400">GreenCart</b> (E-commerce website with Stripe
+            integration), <b className="text-purple-500"> PingUp</b> (a social media app), and <b className="text-indigo-500">Food - Del</b> (E-commerce app with Admin dashboard). 
+            Each project has taught me valuable lessons about
             scalability, user experience, and the importance of writing
             performant, maintainable code.
           </p>
@@ -62,7 +64,7 @@ export default function About() {
           <p>
             When I'm not coding, I'm exploring new technologies, contributing to
             open-source projects, or enhancing my skills through continuous
-            learning. I'm fluent in Bengali, English, and Hindi, which helps me
+            learning. I'm fluent in Bengali, English, which helps me
             collaborate with diverse teams and clients globally.
           </p>
         </div>
@@ -185,9 +187,9 @@ export default function About() {
       {/* ===== Stats ===== */}
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-20 mb-10">
         {[
-          { icon: <IoMdCode className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "12+", label: "Projects Completed" },
-          { icon: <LuGlobe className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "3", label: "Languages" },
-          { icon: <SlBadge className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "15+", label: "Technologies" },
+          { icon: <IoMdCode className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "5+", label: "Projects Completed" },
+          { icon: <LuGlobe className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "2", label: "Languages" },
+          { icon: <SlBadge className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "8+", label: "Technologies" },
           { icon: <IoBookOutline className="text-white bg-gradient-to-r from-purple-600 to-indigo-500 p-2 w-12 h-12 rounded-md" />, value: "500+", label: "Learning Hours" },
         ].map((item) => (
           <div
