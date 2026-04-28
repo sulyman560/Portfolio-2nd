@@ -125,7 +125,7 @@ const Hero = () => {
 
                     {/* Download CV */}
                     <a
-                        href="/cv.pdf"
+                        href="/UpdateCv.pdf"
                         download
                         className="
       px-6 py-3
